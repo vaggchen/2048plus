@@ -14,6 +14,9 @@ export default defineConfig({
     },
   },
   base: './',
+  build: {
+    assetsInlineLimit: 40960, // 40kb
+  },
   server:{
     port: 4000,
     host: '0.0.0.0',

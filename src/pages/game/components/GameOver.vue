@@ -1,7 +1,7 @@
 <template>
   <!-- <img :src="myCat" alt=""> -->
   <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black bg-opacity-30">
-    <div class="bg-white rounded-md p-4">
+    <div class="bg-white rounded-md py-8 px-16">
       <p>游戏结束!</p>
       <p>最终得分：{{ score }}</p>
     </div>
@@ -22,7 +22,7 @@ onMounted(() => {
   document.querySelector('#overClose').addEventListener("touchstart", function (e) {
     // 阻止浏览器默认
     e.preventDefault()
-    EventBus.$emit('touchReStart')
+    EventBus.$emit('closeOver')
   }, { passive: false });
 })
 </script>

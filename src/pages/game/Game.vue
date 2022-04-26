@@ -77,6 +77,12 @@ EventBus.$on('touchReStart', () => {
   // alert('touchReStart')
   init()
 })
+// 接收注册事件
+EventBus.$on('closeOver', () => {
+  // alert('touchReStart')
+  over.value = false
+})
+
 init()
 </script>
 <style scoped>

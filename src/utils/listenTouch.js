@@ -1,5 +1,5 @@
     import EventBus from  './eventBus.js'
-    
+    import {debounce} from './debounce.js'
     var startx, starty;
     //获得角度
     function getAngle(angx, angy) {
@@ -45,15 +45,15 @@
         
     }, {passive: false});
     //手指接触屏幕
-    document.addEventListener("touchstart", function(e) {
+    document.addEventListener("touchstart", debounce(function(e) {
       // 阻止浏览器默认
       e.preventDefault()
         startx = e.touches[0].pageX;
         starty = e.touches[0].pageY;
         
-    }, {passive: false});
+    }), {passive: false});
     //手指离开屏幕
-    document.addEventListener("touchend", function(e) {
+    document.addEventListener("touchend", debounce(function(e) {
       // 阻止浏览器默认
       e.preventDefault()
         var endx, endy;
@@ -82,4 +82,4 @@
                 break;
             default:
         }
-    },  {passive: false});
+    }),  {passive: false});
